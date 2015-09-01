@@ -118,6 +118,7 @@ var inSrv = http.createServer(function(req, res) {
 	
 	if (resp) {
 		resp = JSON.stringify(resp);
+		res.setHeader('Access-Control-Allow-Origin', '*');
 		res.setHeader('Content-Type', 'application/json');
 		res.setHeader('Content-Length', resp.length);
 		res.writeHead(200);
